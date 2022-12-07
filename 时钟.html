@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function displayTime() {
+            var elt = document.getElementById("clock");//通 过id="clock"找到元素 
+            var now = new Date();//得到当前时间 
+            elt.innerHTML = now.toLocaleTimeString();//让 elt来显示它 
+            setTimeout(displayTime, 1000);//在1秒后再次执行
+        }
+        window.onload = displayTime;//当onload事件发生时 开始显示时间
+    </script>
+    <title>Document</title>
+    <style>
+        #clock {
+            /*定义id="clock"的元素的样式*/
+            font: bold 24pt sans;
+            /*使用粗体大号字*/
+            background: #ddf;
+            /*定义蓝灰色背景*/
+            padding: 10px;
+            /*周围有一圈空白*/
+            border: solid black 2px;
+            /*定义纯黑色边框*/
+            border-radius: 10px;
+            /*定义圆角（如果浏览器支持的 话）*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Digital Clock</h1>
+    <span id="clock"></span>
+</body>
+
+</html>
